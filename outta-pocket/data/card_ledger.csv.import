@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dw3wyxqwd7ir3"
+
+[deps]
+
+files=["res://data/card_ledger.prompt.translation", "res://data/card_ledger.score.translation"]
+
+source_file="res://data/card_ledger.csv"
+dest_files=["res://data/card_ledger.prompt.translation", "res://data/card_ledger.score.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

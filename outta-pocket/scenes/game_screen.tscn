@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cuvtmhojmoqy8"]
+
+[ext_resource type="Script" uid="uid://bdkmdy1okyopx" path="res://scripts/game_screen.gd" id="1_3uriw"]
+[ext_resource type="Script" uid="uid://b3t65fqdr31gq" path="res://scripts/card_database.gd" id="1_85ytm"]
+[ext_resource type="PackedScene" uid="uid://d06f8utynx61h" path="res://scenes/player panel.tscn" id="2_dv2sx"]
+[ext_resource type="PackedScene" uid="uid://b4gp64iv08ub2" path="res://scenes/outta_pocket_card.tscn" id="4_dv2sx"]
+
+[node name="GameScreen" type="Control" unique_id=250901756]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_3uriw")
+player_panel_scene = ExtResource("2_dv2sx")
+
+[node name="CardDatabase" type="Node" parent="." unique_id=1916078993]
+unique_name_in_owner = true
+script = ExtResource("1_85ytm")
+metadata/_custom_type_script = "uid://b3t65fqdr31gq"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=41546222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameLayout" type="VBoxContainer" parent="MarginContainer" unique_id=98699884]
+layout_mode = 2
+
+[node name="CardArea" type="VBoxContainer" parent="MarginContainer/GameLayout" unique_id=2022883673]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardRatio" type="AspectRatioContainer" parent="MarginContainer/GameLayout/CardArea" unique_id=1340450530]
+custom_minimum_size = Vector2(500, 650)
+layout_mode = 2
+size_flags_vertical = 3
+ratio = 0.7692
+stretch_mode = 3
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="OuttaPocketCard" parent="MarginContainer/GameLayout/CardArea/CardRatio" unique_id=876156567 instance=ExtResource("4_dv2sx")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+
+[node name="PlayerSelectionArea" type="HBoxContainer" parent="MarginContainer" unique_id=1247171614]
+layout_mode = 2
+
+[node name="LeftPlayerList" type="VBoxContainer" parent="MarginContainer/PlayerSelectionArea" unique_id=1076539609]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Spacer" type="Control" parent="MarginContainer/PlayerSelectionArea" unique_id=692216104]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightPlayerList" type="VBoxContainer" parent="MarginContainer/PlayerSelectionArea" unique_id=1984720618]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BottomControls" type="HBoxContainer" parent="MarginContainer" unique_id=663908688]
+layout_mode = 2
+
+[node name="AssignButton" type="Button" parent="MarginContainer/BottomControls" unique_id=1432596464]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "ASSIGN"
+
+[node name="SkipButton" type="Button" parent="MarginContainer/BottomControls" unique_id=1326434502]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "SKIP"
+
+[node name="CancelButton" type="Button" parent="MarginContainer/BottomControls" unique_id=1853985739]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "CANCEL"

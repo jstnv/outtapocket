@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c2uf6ww04eoyr"]
+
+[ext_resource type="Script" uid="uid://c5i4qm3prbidx" path="res://scripts/player_panel.gd" id="1_int48"]
+
+[node name="PlayerPanel" type="Button" unique_id=860500508]
+script = ExtResource("1_int48")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1901450916]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=662515722]
+layout_mode = 2
+
+[node name="RankLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=576946866]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1713513126]
+layout_mode = 2

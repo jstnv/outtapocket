@@ -74,3 +74,11 @@ func skip_current_card() -> void:
 func _refill_draw_pile() -> void:
 	draw_pile = all_cards.duplicate()
 	draw_pile.shuffle()
+
+func reset_game() -> void:
+	players.clear()
+	draw_pile.clear()
+	current_card = null
+
+	players_changed.emit()
+	card_changed.emit(null)

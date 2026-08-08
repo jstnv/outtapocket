@@ -3,23 +3,50 @@
 [ext_resource type="Script" uid="uid://ighi452sfkgf" path="res://scripts/outta_pocket_card.gd" id="1_k5ypn"]
 [ext_resource type="Texture2D" uid="uid://l5lemsb6hjca" path="res://assets/card 001.png" id="2_e1i7n"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0o52"]
+atlas = ExtResource("2_e1i7n")
+region = Rect2(0, 277.3999, 1000, 1022.6001)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifktl"]
+atlas = ExtResource("2_e1i7n")
+region = Rect2(0, 0, 1000, 986.65)
+
 [node name="OuttaPocketCard" type="Control" unique_id=1555928798]
 custom_minimum_size = Vector2(500, 650)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -220.0
-offset_bottom = -630.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
 script = ExtResource("1_k5ypn")
 
 [node name="Template" type="TextureRect" parent="." unique_id=335263480]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_e1i7n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_y0o52")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Template2" type="TextureRect" parent="." unique_id=754633703]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_ifktl")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="PromptLabel" type="Label" parent="." unique_id=1250138093]
 unique_name_in_owner = true
@@ -27,8 +54,8 @@ clip_contents = true
 layout_mode = 0
 offset_left = 30.0
 offset_top = 281.0
-offset_right = 973.0
-offset_bottom = 992.0
+offset_right = 690.0
+offset_bottom = 907.0
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -36,17 +63,18 @@ autowrap_mode = 3
 [node name="ScoreLabel" type="Label" parent="." unique_id=1708213170]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 722.0
-offset_top = 145.0
-offset_right = 855.0
-offset_bottom = 266.0
+offset_left = 520.0
+offset_top = 101.11539
+offset_right = 611.0
+offset_bottom = 194.74039
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CardNumberLabel" type="Label" parent="." unique_id=644428020]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 70.0
-offset_top = 146.0
+offset_left = 74.0
+offset_top = 102.0
 offset_right = 471.0
-offset_bottom = 246.0
-horizontal_alignment = 1
+offset_bottom = 195.0
 vertical_alignment = 1

@@ -1,0 +1,158 @@
+[gd_resource type="Resource" script_class="CardLibrary" format=3 uid="uid://brcyx5gt6656p"]
+
+[ext_resource type="Script" uid="uid://gcyn7yctvrd8" path="res://scripts/card_data.gd" id="1_eeb5e"]
+[ext_resource type="Script" uid="uid://dtve2mspy2o30" path="res://scripts/card_library.gd" id="2_jkd72"]
+
+[sub_resource type="Resource" id="Resource_eeb5e"]
+script = ExtResource("1_eeb5e")
+card_number = 1
+prompt = "Can't Hold Water (Can't Keep a Secret)"
+score = 3
+
+[sub_resource type="Resource" id="Resource_jkd72"]
+script = ExtResource("1_eeb5e")
+card_number = 2
+prompt = "Thinks winging it is a personality trait"
+score = 2
+
+[sub_resource type="Resource" id="Resource_qb2mu"]
+script = ExtResource("1_eeb5e")
+card_number = 3
+prompt = "Would snitch on the whole squad for a McChicken and a Frosty"
+score = 2
+
+[sub_resource type="Resource" id="Resource_efnor"]
+script = ExtResource("1_eeb5e")
+card_number = 4
+prompt = "Can't Hold in a Laugh to Save their life"
+score = 1
+
+[sub_resource type="Resource" id="Resource_eac7t"]
+script = ExtResource("1_eeb5e")
+card_number = 5
+prompt = "Can't enjoy anything unless it feels exclusive"
+score = 2
+
+[sub_resource type="Resource" id="Resource_k6f7w"]
+script = ExtResource("1_eeb5e")
+card_number = 28
+prompt = "Accidentally likes a 5 year old picture when stalking on social media"
+score = 2
+
+[sub_resource type="Resource" id="Resource_pkm3h"]
+script = ExtResource("1_eeb5e")
+card_number = 36
+prompt = "Waves back at someone who wasn't actually waving at them"
+score = 1
+
+[sub_resource type="Resource" id="Resource_fsl23"]
+script = ExtResource("1_eeb5e")
+card_number = 40
+prompt = "Calls stealing borrowing"
+score = 2
+
+[sub_resource type="Resource" id="Resource_hvvq7"]
+script = ExtResource("1_eeb5e")
+card_number = 55
+prompt = "Shows up 2 hours late to their own party"
+score = 2
+
+[sub_resource type="Resource" id="Resource_n0b7n"]
+script = ExtResource("1_eeb5e")
+card_number = 59
+prompt = "\"Where my hug at?\""
+score = 3
+
+[sub_resource type="Resource" id="Resource_itllp"]
+script = ExtResource("1_eeb5e")
+card_number = 67
+prompt = "Brings nothing but napkins to the cookout"
+score = 1
+
+[sub_resource type="Resource" id="Resource_82o2f"]
+script = ExtResource("1_eeb5e")
+card_number = 77
+prompt = "Got absolutely NOOO rizz"
+score = 3
+
+[sub_resource type="Resource" id="Resource_mid7x"]
+script = ExtResource("1_eeb5e")
+card_number = 78
+prompt = "Leaves you on read"
+score = 2
+
+[sub_resource type="Resource" id="Resource_d2wkg"]
+script = ExtResource("1_eeb5e")
+card_number = 83
+prompt = "Should not be allowed near knives"
+score = 3
+
+[sub_resource type="Resource" id="Resource_usa7y"]
+script = ExtResource("1_eeb5e")
+card_number = 84
+prompt = "Never tips"
+score = 2
+
+[sub_resource type="Resource" id="Resource_pgk51"]
+script = ExtResource("1_eeb5e")
+card_number = 86
+prompt = "Eats food off the ground"
+score = 2
+
+[sub_resource type="Resource" id="Resource_pvqug"]
+script = ExtResource("1_eeb5e")
+card_number = 89
+prompt = "Drops silent but deadly farts"
+score = 3
+
+[sub_resource type="Resource" id="Resource_6cxrm"]
+script = ExtResource("1_eeb5e")
+card_number = 109
+prompt = "Joins a cult because the vibes were good"
+score = 2
+
+[sub_resource type="Resource" id="Resource_60ncq"]
+script = ExtResource("1_eeb5e")
+card_number = 116
+prompt = "Thinks speed limits are suggestions"
+score = 2
+
+[sub_resource type="Resource" id="Resource_7mjjt"]
+script = ExtResource("1_eeb5e")
+card_number = 142
+prompt = "Watches true crime to wind down"
+score = 2
+
+[sub_resource type="Resource" id="Resource_8hfa5"]
+script = ExtResource("1_eeb5e")
+card_number = 159
+prompt = "Is in crippling Aura Debt"
+score = 3
+
+[sub_resource type="Resource" id="Resource_jmavg"]
+script = ExtResource("1_eeb5e")
+card_number = 185
+prompt = "Says I don't like drama but is up in everyone's business"
+score = 2
+
+[sub_resource type="Resource" id="Resource_qqr40"]
+script = ExtResource("1_eeb5e")
+card_number = 209
+prompt = "Runs on dino nuggets and Capri Suns"
+score = 2
+
+[sub_resource type="Resource" id="Resource_di881"]
+script = ExtResource("1_eeb5e")
+card_number = 230
+prompt = "Unc"
+score = 2
+
+[sub_resource type="Resource" id="Resource_a5qtn"]
+script = ExtResource("1_eeb5e")
+card_number = 247
+prompt = "Venmo Requests you for $1.78"
+score = 2
+
+[resource]
+script = ExtResource("2_jkd72")
+cards = Array[ExtResource("1_eeb5e")]([SubResource("Resource_eeb5e"), SubResource("Resource_jkd72"), SubResource("Resource_qb2mu"), SubResource("Resource_efnor"), SubResource("Resource_eac7t"), SubResource("Resource_k6f7w"), SubResource("Resource_pkm3h"), SubResource("Resource_fsl23"), SubResource("Resource_hvvq7"), SubResource("Resource_n0b7n"), SubResource("Resource_itllp"), SubResource("Resource_82o2f"), SubResource("Resource_mid7x"), SubResource("Resource_d2wkg"), SubResource("Resource_usa7y"), SubResource("Resource_pgk51"), SubResource("Resource_pvqug"), SubResource("Resource_6cxrm"), SubResource("Resource_60ncq"), SubResource("Resource_7mjjt"), SubResource("Resource_8hfa5"), SubResource("Resource_jmavg"), SubResource("Resource_qqr40"), SubResource("Resource_di881"), SubResource("Resource_a5qtn")])

@@ -1,4 +1,3 @@
-# player_panel.gd
 class_name PlayerPanel
 extends Button
 
@@ -17,4 +16,5 @@ func setup(index: int, player: PlayerData) -> void:
 
 
 func _pressed() -> void:
+	print("PLAYER CLICKED: ", player_index)
 	player_selected.emit(player_index)

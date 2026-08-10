@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://d1qoj52lktugv"]
+[gd_scene load_steps=9 format=3 uid="uid://d1qoj52lktugv"]
 
 [ext_resource type="Script" uid="uid://cvtnft2gdedct" path="res://scripts/player_setup.gd" id="1_412kp"]
 [ext_resource type="PackedScene" uid="uid://cuvtmhojmoqy8" path="res://scenes/game_screen.tscn" id="2_yni53"]
 [ext_resource type="PackedScene" uid="uid://b0nnmhf044x0q" path="res://scenes/player_entry.tscn" id="3_ksabq"]
+[ext_resource type="Theme" path="res://assets/ui/themes/base_ui_theme.tres" id="4_theme"]
+[ext_resource type="Theme" path="res://assets/ui/themes/primary_button_theme.tres" id="5_primary"]
+[ext_resource type="Theme" path="res://assets/ui/themes/secondary_button_theme.tres" id="6_secondary"]
+[ext_resource type="Texture2D" path="res://assets/ui/panels/scrollable_list.svg" id="7_panel"]
+[ext_resource type="Texture2D" path="res://assets/ui/panels/header_bar.svg" id="8_header"]
 
 [node name="PlayerSetup" type="Control" unique_id=1064919467]
 layout_mode = 3
@@ -12,22 +17,61 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_412kp")
+theme = ExtResource("4_theme")
 game_scene = ExtResource("2_yni53")
 player_input_scene = ExtResource("3_ksabq")
 
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.035, 0.035, 1)
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 36.0
+offset_right = -24.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_panel")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1100317228]
-layout_mode = 0
-offset_right = 426.0
-offset_bottom = 503.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 80
+theme_override_constants/margin_top = 56
 theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_bottom = 56
 
 [node name="SetupLayout" type="VBoxContainer" parent="MarginContainer" unique_id=722950745]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 18
 alignment = 1
+
+[node name="BackButton" type="Button" parent="MarginContainer/SetupLayout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme = ExtResource("6_secondary")
+text = "BACK"
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/SetupLayout" unique_id=1426063519]
 custom_minimum_size = Vector2(0, 80)
@@ -36,6 +80,14 @@ theme_override_font_sizes/font_size = 48
 text = "Enter Players"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TitleUnderline" type="TextureRect" parent="MarginContainer/SetupLayout"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("8_header")
+expand_mode = 1
+stretch_mode = 0
 
 [node name="PlayerInputList" type="VBoxContainer" parent="MarginContainer/SetupLayout" unique_id=1186172774]
 unique_name_in_owner = true
@@ -47,6 +99,7 @@ theme_override_constants/separation = 16
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme = ExtResource("6_secondary")
 size_flags_vertical = 4
 text = "Add Player"
 
@@ -60,5 +113,6 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+theme = ExtResource("5_primary")
 size_flags_vertical = 4
 text = "START GAME"

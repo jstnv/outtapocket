@@ -2,6 +2,15 @@ extends Node
 
 signal card_changed(card: CardData)
 signal players_changed
+signal game_won(player: PlayerData)
+
+enum GameMode {
+	INFINITE,
+	FIRST_TO_10
+}
+
+var selected_game_mode: GameMode = GameMode.INFINITE
+var winner: PlayerData = null
 
 var players: Array[PlayerData] = []
 
@@ -13,6 +22,7 @@ var current_card: CardData = null
 
 func set_players(names: Array[String]) -> void:
 	players.clear()
+	winner = null
 
 	for entered_name: String in names:
 		var cleaned_name: String = entered_name.strip_edges()
@@ -60,6 +70,13 @@ func assign_current_card(player_index: int) -> void:
 	current_card = null
 
 	players_changed.emit()
+
+	if selected_game_mode == GameMode.FIRST_TO_10 \
+			and selected_player.score >= 10:
+		winner = selected_player
+		game_won.emit(selected_player)
+		return
+
 	draw_next_card()
 
 
@@ -77,8 +94,10 @@ func _refill_draw_pile() -> void:
 
 func reset_game() -> void:
 	players.clear()
+	all_cards.clear()
 	draw_pile.clear()
 	current_card = null
+	winner = null
 
 	players_changed.emit()
 	card_changed.emit(null)

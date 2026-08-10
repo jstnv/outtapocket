@@ -1,21 +1,24 @@
-[gd_scene format=3 uid="uid://b0nnmhf044x0q"]
+[gd_scene load_steps=3 format=3 uid="uid://b0nnmhf044x0q"]
 
 [ext_resource type="Script" uid="uid://w0ofbyqt3reg" path="res://scripts/player_entry.gd" id="1_0yy4v"]
+[ext_resource type="Theme" path="res://assets/ui/themes/small_button_theme.tres" id="2_small"]
 
 [node name="PlayerEntry" type="HBoxContainer" unique_id=1583375023]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, 80)
 offset_right = 713.0
-offset_bottom = 64.0
+offset_bottom = 80.0
 size_flags_horizontal = 3
 script = ExtResource("1_0yy4v")
 
 [node name="NameInput" type="LineEdit" parent="." unique_id=1769627288]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="DeleteButton" type="Button" parent="." unique_id=1220200749]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+theme = ExtResource("2_small")
 text = "x"

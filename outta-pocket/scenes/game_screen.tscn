@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://cuvtmhojmoqy8"]
+[gd_scene load_steps=9 format=3 uid="uid://cuvtmhojmoqy8"]
 
 [ext_resource type="Script" uid="uid://bdkmdy1okyopx" path="res://scripts/game_screen.gd" id="1_3uriw"]
 [ext_resource type="Script" uid="uid://b3t65fqdr31gq" path="res://scripts/card_database.gd" id="1_85ytm"]
 [ext_resource type="PackedScene" uid="uid://c2uf6ww04eoyr" path="res://scenes/player_panel.tscn" id="2_dv2sx"]
 [ext_resource type="PackedScene" uid="uid://b4gp64iv08ub2" path="res://scenes/outta_pocket_card.tscn" id="4_dv2sx"]
+[ext_resource type="Theme" path="res://assets/ui/themes/base_ui_theme.tres" id="5_theme"]
+[ext_resource type="Theme" path="res://assets/ui/themes/primary_button_theme.tres" id="6_primary"]
+[ext_resource type="Theme" path="res://assets/ui/themes/secondary_button_theme.tres" id="7_secondary"]
+[ext_resource type="Theme" path="res://assets/ui/themes/danger_button_theme.tres" id="8_danger"]
 
 [node name="GameScreen" type="Control" unique_id=250901756]
 layout_mode = 3
@@ -15,7 +19,18 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_3uriw")
+theme = ExtResource("5_theme")
 player_panel_scene = ExtResource("2_dv2sx")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.035, 0.035, 1)
 
 [node name="CardDatabase" type="Node" parent="." unique_id=1916078993]
 unique_name_in_owner = true
@@ -52,27 +67,31 @@ mouse_filter = 2
 
 [node name="LeftPlayerList" type="VBoxContainer" parent="PlayerOverlay" unique_id=1076539609]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(160, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_right = 160.0
+offset_left = 16.0
+offset_right = 256.0
 grow_vertical = 2
+theme_override_constants/separation = 12
 size_flags_vertical = 4
 
 [node name="RightPlayerList" type="VBoxContainer" parent="PlayerOverlay" unique_id=1984720618]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(160, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -160.0
+offset_left = -256.0
+offset_right = -16.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 12
 size_flags_vertical = 4
 
 [node name="BottomControls" type="HBoxContainer" parent="." unique_id=663908688]
@@ -87,6 +106,7 @@ mouse_filter = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
+theme = ExtResource("6_primary")
 size_flags_horizontal = 3
 size_flags_vertical = 8
 text = "ASSIGN"
@@ -95,6 +115,7 @@ text = "ASSIGN"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
+theme = ExtResource("7_secondary")
 size_flags_horizontal = 3
 size_flags_vertical = 8
 text = "SKIP"
@@ -103,23 +124,25 @@ text = "SKIP"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
+theme = ExtResource("8_danger")
 size_flags_horizontal = 3
 size_flags_vertical = 8
 text = "CANCEL"
 
 [node name="EndGameButton" type="Button" parent="." unique_id=1784182039]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 72)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -151.0
-offset_top = -53.0
-offset_right = -59.0
-offset_bottom = -22.0
+offset_left = -214.0
+offset_top = -96.0
+offset_right = -24.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.5, 1.5)
+theme = ExtResource("8_danger")
 text = "END GAME"

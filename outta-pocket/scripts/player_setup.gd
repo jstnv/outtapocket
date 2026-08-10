@@ -9,11 +9,13 @@ const MINIMUM_PLAYERS: int = 3
 @onready var add_player_button: Button = %AddPlayerButton
 @onready var start_game_button: Button = %StartGameButton
 @onready var warning_label: Label = %WarningLabel
+@onready var back_button: Button = %BackButton
 
 
 func _ready() -> void:
 	add_player_button.pressed.connect(_on_add_player_pressed)
 	start_game_button.pressed.connect(_on_start_game_pressed)
+	back_button.pressed.connect(_on_back_pressed)
 
 	warning_label.hide()
 
@@ -78,3 +80,8 @@ func _on_start_game_pressed() -> void:
 
 	GameManager.set_players(names)
 	get_tree().change_scene_to_packed(game_scene)
+
+
+func _on_back_pressed() -> void:
+	GameManager.reset_game()
+	get_tree().change_scene_to_file("res://scenes/mode_selection.tscn")

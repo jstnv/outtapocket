@@ -1,12 +1,32 @@
-[gd_scene format=3 uid="uid://c2uf6ww04eoyr"]
+[gd_scene load_steps=4 format=3 uid="uid://c2uf6ww04eoyr"]
 
 [ext_resource type="Script" uid="uid://c5i4qm3prbidx" path="res://scripts/player_panel.gd" id="1_int48"]
+[ext_resource type="Theme" path="res://assets/ui/themes/player_button_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://assets/ui/players/score_default.svg" id="3_score"]
 
 [node name="PlayerPanel" type="Button" unique_id=860500508]
-custom_minimum_size = Vector2(105, 72)
-offset_right = 140.0
-offset_bottom = 64.0
+custom_minimum_size = Vector2(220, 104)
+offset_right = 220.0
+offset_bottom = 104.0
+size_flags_horizontal = 3
 script = ExtResource("1_int48")
+theme = ExtResource("2_theme")
+
+[node name="ScoreFrame" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -44.0
+offset_right = 78.0
+offset_bottom = 44.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_score")
+expand_mode = 1
+stretch_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1901450916]
 layout_mode = 1
@@ -17,9 +37,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 6
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1913710479]
 layout_mode = 2
@@ -29,10 +49,10 @@ alignment = 1
 
 [node name="RankLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=576946866]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(72, 56)
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -40,6 +60,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 6
